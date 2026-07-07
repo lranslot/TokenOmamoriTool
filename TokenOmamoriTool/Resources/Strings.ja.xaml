@@ -1,0 +1,182 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- 日本語リソース。キー集合は Strings.en.xaml と常に一致させること（単体テストで検証される）。 -->
+
+    <!-- 共通 -->
+    <sys:String x:Key="AppTitle">トークン節約お守りツール</sys:String>
+    <sys:String x:Key="Common_Measuring">計測中...</sys:String>
+    <sys:String x:Key="Common_Save">保存</sys:String>
+    <sys:String x:Key="Common_Cancel">キャンセル</sys:String>
+    <sys:String x:Key="Common_Close">閉じる</sys:String>
+    <sys:String x:Key="Caption_Error">エラー</sys:String>
+
+    <!-- 右クリックメニュー（ウィンドウ・トレイ共通） -->
+    <sys:String x:Key="Menu_CopyDietInstruction">CLAUDE.mdダイエット指示をコピー</sys:String>
+    <sys:String x:Key="Menu_OpenClaudeMdFolder">CLAUDE.mdのフォルダを開く</sys:String>
+    <sys:String x:Key="Menu_CopyCompact">/compact をコピー</sys:String>
+    <sys:String x:Key="Menu_ToolManagement">ツール管理</sys:String>
+    <sys:String x:Key="Menu_Settings">設定</sys:String>
+    <sys:String x:Key="Menu_Help">説明</sys:String>
+    <sys:String x:Key="Menu_Exit">終了</sys:String>
+    <sys:String x:Key="Menu_Language">Language / 言語</sys:String>
+    <sys:String x:Key="Menu_LanguageJapanese">日本語</sys:String>
+    <sys:String x:Key="Menu_LanguageEnglish">English</sys:String>
+    <sys:String x:Key="Menu_InstallRtk">RTKをインストール</sys:String>
+    <sys:String x:Key="Menu_UninstallRtk">RTKをアンインストール</sys:String>
+    <sys:String x:Key="Menu_InstallClaudeMem">claude-memをインストール</sys:String>
+    <sys:String x:Key="Menu_UninstallClaudeMem">claude-memをアンインストール</sys:String>
+    <sys:String x:Key="Menu_ClaudeCliMissing">claude CLIが見つかりません</sys:String>
+
+    <!-- CLAUDE.mdダイエット指示（クリップボードにコピーされる文面） -->
+    <sys:String x:Key="Diet_MessageOverLimit">CLAUDE.mdが{0}行/{1:F1}KBで、上限（{2}行/{3}KB）を超過しています。至急、実装メモなどの詳細をdocs内の別ファイルに移して、CLAUDE.mdには参照だけ残してください</sys:String>
+    <sys:String x:Key="Diet_MessageWarning">CLAUDE.mdが{0}行/{1:F1}KBで上限の70%を超えました。予防的に、実装メモなどの詳細をdocs内の別ファイルへ移してスリム化してください</sys:String>
+
+    <!-- エラー・確認ダイアログ -->
+    <sys:String x:Key="Error_OpenFolderFailed">フォルダを開けませんでした: {0}</sys:String>
+    <sys:String x:Key="Confirm_RtkUninstall_Text">RTKのフック（Claude Code設定）とRTK本体を削除します。よろしいですか？</sys:String>
+    <sys:String x:Key="Confirm_RtkUninstall_Caption">RTKのアンインストール確認</sys:String>
+    <sys:String x:Key="Confirm_ClaudeMemUninstall_Text">claude-memプラグインをアンインストールします（~/.claude-memのデータは削除されません）。よろしいですか？</sys:String>
+    <sys:String x:Key="Confirm_ClaudeMemUninstall_Caption">claude-memのアンインストール確認</sys:String>
+
+    <!-- ツール操作ウィンドウのタイトル -->
+    <sys:String x:Key="OpTitle_RtkInstall">RTKのインストール</sys:String>
+    <sys:String x:Key="OpTitle_RtkUninstall">RTKのアンインストール</sys:String>
+    <sys:String x:Key="OpTitle_ClaudeMemInstall">claude-memのインストール</sys:String>
+    <sys:String x:Key="OpTitle_ClaudeMemUninstall">claude-memのアンインストール</sys:String>
+
+    <!-- トレイ -->
+    <sys:String x:Key="Tray_TooltipClaudeMd">CLAUDE.md {0}</sys:String>
+    <sys:String x:Key="Tray_TooltipSession">セッション {0}</sys:String>
+    <sys:String x:Key="Tray_TooltipTodaySaved">本日節約 {0}</sys:String>
+    <sys:String x:Key="Toast_ClaudeMdWarning">CLAUDE.mdが上限の70%を超えました。右クリックメニューからダイエット指示をコピーできます</sys:String>
+    <sys:String x:Key="Toast_SessionLogWarning">セッションログが上限の70%を超えました。/compact の実行を検討してください</sys:String>
+    <sys:String x:Key="Toast_TrayResident">トレイに常駐しています。終了はトレイアイコンの右クリックから行えます</sys:String>
+
+    <!-- 設定ウィンドウ -->
+    <sys:String x:Key="Settings_Title">設定</sys:String>
+    <sys:String x:Key="Settings_MaxLines">CLAUDE.md 行数上限</sys:String>
+    <sys:String x:Key="Settings_MaxSizeKB">CLAUDE.md サイズ上限 (KB)</sys:String>
+    <sys:String x:Key="Settings_SessionLogMaxMB">セッションログ上限 (MB)</sys:String>
+    <sys:String x:Key="Settings_PollInterval">監視間隔 (秒)</sys:String>
+    <sys:String x:Key="Settings_ExternalToolsInterval">外部コマンド間隔 (秒)</sys:String>
+    <sys:String x:Key="Settings_HideOnClose">×ボタンでトレイに格納する</sys:String>
+    <sys:String x:Key="Settings_ToastOnWarning">警告をトースト通知する</sys:String>
+    <sys:String x:Key="Settings_ErrorPositiveNumbers">すべての項目に正の数値を入力してください</sys:String>
+    <sys:String x:Key="Settings_Reset">初期値に戻す</sys:String>
+    <sys:String x:Key="Settings_ResetConfirm_Text">すべての設定を初期値（200行/25KB/5MB/5秒/60秒）に戻しますか？</sys:String>
+    <sys:String x:Key="Settings_ResetConfirm_Caption">初期値に戻す確認</sys:String>
+
+    <!-- ツール操作ウィンドウ -->
+    <sys:String x:Key="ToolOp_Title">ツール操作</sys:String>
+    <sys:String x:Key="ToolOp_Run">実行</sys:String>
+    <sys:String x:Key="ToolOp_Running">実行中...</sys:String>
+    <sys:String x:Key="ToolOp_RetryFromFailed">失敗したステップから再試行</sys:String>
+    <sys:String x:Key="ToolOp_Done">完了</sys:String>
+    <sys:String x:Key="ToolOp_UnexpectedError">予期しないエラー: {0}</sys:String>
+    <sys:String x:Key="ToolOp_StatusRunning">実行中</sys:String>
+
+    <!-- 監視（バーのラベル・状態メッセージ） -->
+    <sys:String x:Key="Bar_Lines">行数</sys:String>
+    <sys:String x:Key="Bar_LinesValue">{0}/{1}行</sys:String>
+    <sys:String x:Key="Bar_Size">サイズ</sys:String>
+    <sys:String x:Key="Bar_SizeValue">{0:F1}/{1}KB</sys:String>
+    <sys:String x:Key="Bar_SessionLog">セッションログ</sys:String>
+    <sys:String x:Key="Bar_SessionLogValue">{0:F0}/{1:F0}KB</sys:String>
+    <sys:String x:Key="Monitor_ClaudeMdNotFound">{0} が見つかりません</sys:String>
+    <sys:String x:Key="Monitor_ClaudeMdOk">{0}行 / {1:F1}KB</sys:String>
+    <sys:String x:Key="Monitor_ClaudeMdBloated">{0}が肥大化しています：現在{1}行/{2:F1}KB</sys:String>
+    <sys:String x:Key="Monitor_SessionNotFound">セッションログ未検出</sys:String>
+    <sys:String x:Key="Monitor_SessionOk">{0:F0}KB</sys:String>
+    <sys:String x:Key="Monitor_SessionBloated">セッションが肥大化しています（{0:F1}MB）。/compact の実行を推奨します</sys:String>
+    <sys:String x:Key="Monitor_SessionBloatedSinceCompact">セッションが肥大化しています（前回compact以降 {0:F1}MB）。/compact の実行を推奨します</sys:String>
+
+    <!-- RTK / ccusage の表示行 -->
+    <sys:String x:Key="Rtk_NotInstalled">節約(RTK)：未導入</sys:String>
+    <sys:String x:Key="Rtk_NoOutput">節約(RTK)：出力なし</sys:String>
+    <sys:String x:Key="Rtk_Raw">節約(RTK)：{0}</sys:String>
+    <sys:String x:Key="Rtk_Display">節約(RTK)：{0} tokens ({1:F1}%)</sys:String>
+    <sys:String x:Key="Rtk_DailyDisplay">節約(RTK)：本日 {0} / 累計 {1} tokens</sys:String>
+    <sys:String x:Key="Ccusage_NodeMissing">本日消費：Node.js未導入</sys:String>
+    <sys:String x:Key="Ccusage_RunFailed">本日消費：実行に失敗しました</sys:String>
+    <sys:String x:Key="Ccusage_ParseFailed">本日消費：解析失敗</sys:String>
+    <sys:String x:Key="Ccusage_Zero">本日消費：0 tokens</sys:String>
+    <sys:String x:Key="Ccusage_Display">本日消費：{0:N0} tokens (${1:F2})</sys:String>
+
+    <!-- RTKインストール手順 -->
+    <sys:String x:Key="RtkStep_FetchRelease">GitHub ReleasesからWindows向けビルド済みバイナリを検索</sys:String>
+    <sys:String x:Key="RtkStep_FetchRelease_Found">見つかりました: {0} ({1})</sys:String>
+    <sys:String x:Key="RtkStep_FetchRelease_NoAsset">Windows向けzipアセットが見つかりませんでした（次のステップでcargo導入にフォールバックします）</sys:String>
+    <sys:String x:Key="RtkStep_FetchRelease_Failed">取得失敗: {0}（次のステップでcargo導入にフォールバックします）</sys:String>
+    <sys:String x:Key="RtkStep_Download">バイナリをダウンロードして展開・配置</sys:String>
+    <sys:String x:Key="RtkStep_Download_Preview">(上記URLからzipをダウンロードして展開)</sys:String>
+    <sys:String x:Key="RtkStep_Download_NoUrl">ダウンロードURL未取得のためスキップ（cargo導入にフォールバックします）</sys:String>
+    <sys:String x:Key="RtkStep_Download_Placed">配置先: {0}</sys:String>
+    <sys:String x:Key="RtkStep_Download_NoExe">展開後にrtk.exeが見つかりませんでした（cargo導入にフォールバックします）</sys:String>
+    <sys:String x:Key="RtkStep_Download_Failed">ダウンロード/展開に失敗しました: {0}（cargo導入にフォールバックします）</sys:String>
+    <sys:String x:Key="RtkStep_Cargo">(フォールバック) Rust/cargoでソースからビルド</sys:String>
+    <sys:String x:Key="RtkStep_Cargo_SkippedBinaryOk">バイナリ導入が成功済みのためスキップ</sys:String>
+    <sys:String x:Key="RtkStep_Cargo_Failed">cargo installに失敗しました: {0}</sys:String>
+    <sys:String x:Key="RtkStep_Cargo_Ok">cargo installでRTKを導入しました</sys:String>
+    <sys:String x:Key="RtkStep_Rustup_Ok">rustupを導入しました</sys:String>
+    <sys:String x:Key="RtkStep_Rustup_Failed">rustupの導入に失敗しました</sys:String>
+    <sys:String x:Key="RtkStep_Rustup_DownloadFailed">rustupダウンロードに失敗しました: {0}</sys:String>
+    <sys:String x:Key="RtkStep_VerifyVersion">rtk --version で導入確認</sys:String>
+    <sys:String x:Key="RtkStep_VerifyVersion_Failed">rtk --version が実行できません（PATH未反映の可能性。アプリの再起動が必要な場合があります）</sys:String>
+    <sys:String x:Key="RtkStep_VerifyGain">rtk gain で本物のRTKか確認（別パッケージ対策）</sys:String>
+    <sys:String x:Key="RtkStep_VerifyGain_Ok">rtk gain 実行成功</sys:String>
+    <sys:String x:Key="RtkStep_VerifyGain_Failed">rtk gain が失敗しました。crates.io上の別パッケージ（同名のRust Type Kit）が誤って導入された可能性があります</sys:String>
+    <sys:String x:Key="RtkStep_InitHook">Claude Codeフックを設定</sys:String>
+    <sys:String x:Key="RtkStep_InitHook_Ok">フック設定完了。すべてのツールを導入し終えたら、最後にClaude Code（VS Codeごと）を1回再起動してください。再起動は1回で全ツールに反映されます。</sys:String>
+    <sys:String x:Key="RtkStep_InitHook_Timeout">rtk init -g がタイムアウトしました。コマンドプロンプトを開いて「rtk init -g」を手動で実行し、確認の質問（例: Patch existing ...settings.json? [y/N]）には y と答えて完了させてください。完了後、このアプリを再起動すれば以降のRTK連携が有効になります。</sys:String>
+    <sys:String x:Key="RtkStep_InitHook_Failed">rtk init -g に失敗しました: {0}</sys:String>
+
+    <!-- RTKアンインストール手順 -->
+    <sys:String x:Key="RtkStep_RemoveHook">RTKのフック・RTK.md・Claude Code設定エントリを除去</sys:String>
+    <sys:String x:Key="RtkStep_RemoveHook_Ok">フックを除去しました</sys:String>
+    <sys:String x:Key="RtkStep_RemoveHook_Failed">rtk init -g --uninstall に失敗しました: {0}</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary">RTK本体を削除</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_Preview">(導入方式に応じて cargo uninstall rtk、またはバイナリファイルの削除)</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_CargoOk">cargo uninstall rtk 完了</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_CargoFailed">cargo uninstallに失敗しました: {0}</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_Ok">バイナリを削除しました</sys:String>
+
+    <!-- claude-mem手順 -->
+    <sys:String x:Key="CmStep_AddMarketplace">claude-memのマーケットプレースを追加</sys:String>
+    <sys:String x:Key="CmStep_AddMarketplace_Failed">marketplace追加に失敗しました: {0}</sys:String>
+    <sys:String x:Key="CmStep_Install">claude-memプラグインを導入</sys:String>
+    <sys:String x:Key="CmStep_Install_Failed">インストールに失敗しました: {0}</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings">省トークン設定を適用（既存ファイルはバックアップ）</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings_Preview">{0} に CONTEXT_OBSERVATIONS=1 / CONTEXT_FULL_COUNT=0 / CONTEXT_SESSION_COUNT=1 を設定</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings_Ok">省トークン設定を適用しました</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings_Failed">設定適用に失敗しました: {0}</sys:String>
+    <sys:String x:Key="CmStep_Uninstall">claude-memプラグインをアンインストール（~/.claude-mem のデータは保持されます）</sys:String>
+    <sys:String x:Key="CmStep_Uninstall_Failed">アンインストールに失敗しました: {0}</sys:String>
+
+    <!-- カンパ導線 -->
+    <sys:String x:Key="Menu_SupportDev">☕ 開発を応援</sys:String>
+    <sys:String x:Key="Donation_BannerMessage">累計{0}トークン節約しました 🎉 役に立っていたら開発を応援してもらえると嬉しいです</sys:String>
+    <sys:String x:Key="Donation_Support">応援する</sys:String>
+    <sys:String x:Key="Donation_Milestone_100K">10万</sys:String>
+    <sys:String x:Key="Donation_Milestone_1M">100万</sys:String>
+    <sys:String x:Key="Donation_Milestone_10M">1000万</sys:String>
+    <sys:String x:Key="Donation_HelpLink">☕ 開発を応援する（カンパページを開く）</sys:String>
+
+    <!-- 説明ウィンドウ -->
+    <sys:String x:Key="Help_Title">説明</sys:String>
+    <sys:String x:Key="Help_WhatPrefix">これは何？：</sys:String>
+    <sys:String x:Key="Help_HowPrefix">どうすればいい？：</sys:String>
+    <sys:String x:Key="Help_BarColors_Title">バーの色</sys:String>
+    <sys:String x:Key="Help_BarColors_What">使用量の目安。緑=余裕あり、黄=そろそろ注意、赤=対処が必要</sys:String>
+    <sys:String x:Key="Help_BarColors_How">黄や赤になったら、下の各項目の対処法を実行してください</sys:String>
+    <sys:String x:Key="Help_ClaudeMd_Title">行数・サイズ（CLAUDE.md）</sys:String>
+    <sys:String x:Key="Help_ClaudeMd_What">Claude Codeへの指示書ファイルの大きさ。大きすぎると毎回無駄なトークンを消費します</sys:String>
+    <sys:String x:Key="Help_ClaudeMd_How">黄や赤になったら右クリック→「CLAUDE.mdダイエット指示をコピー」をクリックし、Claude Codeのチャット欄に貼り付けて実行してください（緑のときはこの項目はグレーアウトされ、現在の行数・サイズを埋め込んだ文面がコピーされます）。自分で直接編集したい場合は「CLAUDE.mdのフォルダを開く」からエクスプローラーで開いて手動で整理することもできます</sys:String>
+    <sys:String x:Key="Help_SessionLog_Title">セッションログ</sys:String>
+    <sys:String x:Key="Help_SessionLog_What">Claude Codeとの会話の長さ。長くなりすぎるとAIの精度が落ち、トークン消費も増えます</sys:String>
+    <sys:String x:Key="Help_SessionLog_How">赤くなったら右クリック→「/compactをコピー」をクリックし、Claude Codeのチャット欄に貼り付けて実行してください。会話の要点を残して圧縮されます。（補足：/compactを実行してもログファイル自体は小さくなりません。このツールは「最後に/compactした時点からの増加分」で判定しているので、実行後5秒ほどでバーが緑に戻れば正常です）</sys:String>
+    <sys:String x:Key="Help_Totals_Title">節約(RTK) / 本日消費(ccusage)の表示</sys:String>
+    <sys:String x:Key="Help_Totals_What">節約(RTK)の行=このツールが節約できたトークン数（本日分と、導入からの累計）。本日消費の行=今日Claudeを使った量。本日消費の金額($)は ccusage によるAPI従量課金換算の参考値です。定額プラン(Pro/Max等)をご利用の場合、実際の請求額ではありません</sys:String>
+    <sys:String x:Key="Help_Totals_How">見るだけでOK。節約(RTK)の数字が増えていれば節約が効いています。「節約(RTK)：未導入」と表示されている場合は、右クリック→「ツール管理」→「RTKをインストール」を実行してください。導入後はClaude Codeの再起動が必要です</sys:String>
+    <sys:String x:Key="Help_VersionPrefix">バージョン:</sys:String>
+</ResourceDictionary>

@@ -1,0 +1,67 @@
+<Window x:Class="TokenOmamoriTool.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="{DynamicResource Help_Title}" SizeToContent="WidthAndHeight"
+        Icon="/Assets/omamori.ico" Background="{StaticResource WashiBackground}"
+        MaxWidth="460" MaxHeight="640" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <ScrollViewer Margin="12" VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <TextBlock Text="{DynamicResource Help_BarColors_Title}" FontWeight="Bold" FontSize="12" Margin="0,0,0,4" />
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,2">
+                <Run Text="{DynamicResource Help_WhatPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_BarColors_What}" />
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,10">
+                <Run Text="{DynamicResource Help_HowPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_BarColors_How}" />
+            </TextBlock>
+
+            <TextBlock Text="{DynamicResource Help_ClaudeMd_Title}" FontWeight="Bold" FontSize="12" Margin="0,0,0,4" />
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,2">
+                <Run Text="{DynamicResource Help_WhatPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_ClaudeMd_What}" />
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,10">
+                <Run Text="{DynamicResource Help_HowPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_ClaudeMd_How}" />
+            </TextBlock>
+
+            <TextBlock Text="{DynamicResource Help_SessionLog_Title}" FontWeight="Bold" FontSize="12" Margin="0,0,0,4" />
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,2">
+                <Run Text="{DynamicResource Help_WhatPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_SessionLog_What}" />
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,10">
+                <Run Text="{DynamicResource Help_HowPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_SessionLog_How}" />
+            </TextBlock>
+
+            <TextBlock Text="{DynamicResource Help_Totals_Title}" FontWeight="Bold" FontSize="12" Margin="0,0,0,4" />
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,2">
+                <Run Text="{DynamicResource Help_WhatPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_Totals_What}" />
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="11" Margin="0,0,0,10">
+                <Run Text="{DynamicResource Help_HowPrefix}" FontWeight="Bold" />
+                <Run Text="{DynamicResource Help_Totals_How}" />
+            </TextBlock>
+
+            <Separator Margin="0,2,0,8" />
+            <TextBlock FontSize="11" TextWrapping="Wrap">
+                <Hyperlink Click="DonateLink_Click">
+                    <Run Text="{DynamicResource Donation_HelpLink}" />
+                </Hyperlink>
+            </TextBlock>
+
+            <!-- §13.3: version from assembly metadata (set once in code-behind — it never changes);
+                 the prefix is a DynamicResource so a live language switch still updates it. -->
+            <TextBlock FontSize="10" Foreground="Gray" Margin="0,8,0,0">
+                <Run Text="{DynamicResource Help_VersionPrefix}" /><Run x:Name="VersionRun" />
+            </TextBlock>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

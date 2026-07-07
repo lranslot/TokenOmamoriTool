@@ -1,0 +1,18 @@
+# Build outputs
+bin/
+obj/
+publish/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Backup files
+*.bak
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# App-generated runtime config (created next to the exe on first run)
+settings.json

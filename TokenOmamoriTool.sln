@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37411.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenOmamoriTool", "TokenOmamoriTool\TokenOmamoriTool.csproj", "{D7140CA5-2293-4696-8651-494B60F33CCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenOmamoriTool.Tests", "TokenOmamoriTool.Tests\TokenOmamoriTool.Tests.csproj", "{7C818ABF-18FC-4029-A135-163183C03B25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Debug|x64.Build.0 = Debug|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Debug|x86.Build.0 = Debug|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Release|x64.ActiveCfg = Release|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Release|x64.Build.0 = Release|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Release|x86.ActiveCfg = Release|Any CPU
+		{D7140CA5-2293-4696-8651-494B60F33CCF}.Release|x86.Build.0 = Release|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Debug|x64.Build.0 = Debug|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Debug|x86.Build.0 = Debug|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Release|x64.ActiveCfg = Release|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Release|x64.Build.0 = Release|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C818ABF-18FC-4029-A135-163183C03B25}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B091843-531A-46B5-8B3E-1A546153E2BF}
+	EndGlobalSection
+EndGlobal

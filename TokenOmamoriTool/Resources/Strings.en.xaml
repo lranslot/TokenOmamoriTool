@@ -1,0 +1,182 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- English resources. The key set must always match Strings.ja.xaml (enforced by a unit test). -->
+
+    <!-- Common -->
+    <sys:String x:Key="AppTitle">Token Omamori Tool</sys:String>
+    <sys:String x:Key="Common_Measuring">Measuring...</sys:String>
+    <sys:String x:Key="Common_Save">Save</sys:String>
+    <sys:String x:Key="Common_Cancel">Cancel</sys:String>
+    <sys:String x:Key="Common_Close">Close</sys:String>
+    <sys:String x:Key="Caption_Error">Error</sys:String>
+
+    <!-- Right-click menu (shared by window and tray) -->
+    <sys:String x:Key="Menu_CopyDietInstruction">Copy CLAUDE.md diet instructions</sys:String>
+    <sys:String x:Key="Menu_OpenClaudeMdFolder">Open CLAUDE.md folder</sys:String>
+    <sys:String x:Key="Menu_CopyCompact">Copy /compact</sys:String>
+    <sys:String x:Key="Menu_ToolManagement">Manage tools</sys:String>
+    <sys:String x:Key="Menu_Settings">Settings</sys:String>
+    <sys:String x:Key="Menu_Help">Help</sys:String>
+    <sys:String x:Key="Menu_Exit">Exit</sys:String>
+    <sys:String x:Key="Menu_Language">Language / 言語</sys:String>
+    <sys:String x:Key="Menu_LanguageJapanese">日本語</sys:String>
+    <sys:String x:Key="Menu_LanguageEnglish">English</sys:String>
+    <sys:String x:Key="Menu_InstallRtk">Install RTK</sys:String>
+    <sys:String x:Key="Menu_UninstallRtk">Uninstall RTK</sys:String>
+    <sys:String x:Key="Menu_InstallClaudeMem">Install claude-mem</sys:String>
+    <sys:String x:Key="Menu_UninstallClaudeMem">Uninstall claude-mem</sys:String>
+    <sys:String x:Key="Menu_ClaudeCliMissing">claude CLI not found</sys:String>
+
+    <!-- CLAUDE.md diet instructions (copied to the clipboard) -->
+    <sys:String x:Key="Diet_MessageOverLimit">CLAUDE.md is at {0} lines/{1:F1}KB, exceeding its limit ({2} lines/{3}KB). Please move details such as implementation notes into separate files under docs/ right away, leaving only references in CLAUDE.md</sys:String>
+    <sys:String x:Key="Diet_MessageWarning">CLAUDE.md is at {0} lines/{1:F1}KB, past 70% of its limit. As a precaution, please slim it down by moving details such as implementation notes into separate files under docs/</sys:String>
+
+    <!-- Errors and confirmations -->
+    <sys:String x:Key="Error_OpenFolderFailed">Could not open the folder: {0}</sys:String>
+    <sys:String x:Key="Confirm_RtkUninstall_Text">This will remove the RTK hook (Claude Code settings) and the RTK binary. Continue?</sys:String>
+    <sys:String x:Key="Confirm_RtkUninstall_Caption">Confirm RTK uninstall</sys:String>
+    <sys:String x:Key="Confirm_ClaudeMemUninstall_Text">This will uninstall the claude-mem plugin (your data in ~/.claude-mem is kept). Continue?</sys:String>
+    <sys:String x:Key="Confirm_ClaudeMemUninstall_Caption">Confirm claude-mem uninstall</sys:String>
+
+    <!-- Tool operation window titles -->
+    <sys:String x:Key="OpTitle_RtkInstall">Install RTK</sys:String>
+    <sys:String x:Key="OpTitle_RtkUninstall">Uninstall RTK</sys:String>
+    <sys:String x:Key="OpTitle_ClaudeMemInstall">Install claude-mem</sys:String>
+    <sys:String x:Key="OpTitle_ClaudeMemUninstall">Uninstall claude-mem</sys:String>
+
+    <!-- Tray -->
+    <sys:String x:Key="Tray_TooltipClaudeMd">CLAUDE.md {0}</sys:String>
+    <sys:String x:Key="Tray_TooltipSession">Session {0}</sys:String>
+    <sys:String x:Key="Tray_TooltipTodaySaved">Saved today {0}</sys:String>
+    <sys:String x:Key="Toast_ClaudeMdWarning">CLAUDE.md is past 70% of its limit. You can copy diet instructions from the right-click menu</sys:String>
+    <sys:String x:Key="Toast_SessionLogWarning">The session log is past 70% of its limit. Consider running /compact</sys:String>
+    <sys:String x:Key="Toast_TrayResident">Still running in the system tray. To exit, right-click the tray icon</sys:String>
+
+    <!-- Settings window -->
+    <sys:String x:Key="Settings_Title">Settings</sys:String>
+    <sys:String x:Key="Settings_MaxLines">CLAUDE.md line limit</sys:String>
+    <sys:String x:Key="Settings_MaxSizeKB">CLAUDE.md size limit (KB)</sys:String>
+    <sys:String x:Key="Settings_SessionLogMaxMB">Session log limit (MB)</sys:String>
+    <sys:String x:Key="Settings_PollInterval">Polling interval (seconds)</sys:String>
+    <sys:String x:Key="Settings_ExternalToolsInterval">External command interval (seconds)</sys:String>
+    <sys:String x:Key="Settings_HideOnClose">Hide to tray on close</sys:String>
+    <sys:String x:Key="Settings_ToastOnWarning">Show warning toast notifications</sys:String>
+    <sys:String x:Key="Settings_ErrorPositiveNumbers">Enter a positive number for every field</sys:String>
+    <sys:String x:Key="Settings_Reset">Reset to defaults</sys:String>
+    <sys:String x:Key="Settings_ResetConfirm_Text">Reset all settings to their defaults (200 lines/25KB/5MB/5s/60s)?</sys:String>
+    <sys:String x:Key="Settings_ResetConfirm_Caption">Confirm reset</sys:String>
+
+    <!-- Tool operation window -->
+    <sys:String x:Key="ToolOp_Title">Tool operation</sys:String>
+    <sys:String x:Key="ToolOp_Run">Run</sys:String>
+    <sys:String x:Key="ToolOp_Running">Running...</sys:String>
+    <sys:String x:Key="ToolOp_RetryFromFailed">Retry from failed step</sys:String>
+    <sys:String x:Key="ToolOp_Done">Done</sys:String>
+    <sys:String x:Key="ToolOp_UnexpectedError">Unexpected error: {0}</sys:String>
+    <sys:String x:Key="ToolOp_StatusRunning">Running</sys:String>
+
+    <!-- Monitoring (bar labels and status messages) -->
+    <sys:String x:Key="Bar_Lines">Lines</sys:String>
+    <sys:String x:Key="Bar_LinesValue">{0}/{1} lines</sys:String>
+    <sys:String x:Key="Bar_Size">Size</sys:String>
+    <sys:String x:Key="Bar_SizeValue">{0:F1}/{1}KB</sys:String>
+    <sys:String x:Key="Bar_SessionLog">Session log</sys:String>
+    <sys:String x:Key="Bar_SessionLogValue">{0:F0}/{1:F0}KB</sys:String>
+    <sys:String x:Key="Monitor_ClaudeMdNotFound">{0} not found</sys:String>
+    <sys:String x:Key="Monitor_ClaudeMdOk">{0} lines / {1:F1}KB</sys:String>
+    <sys:String x:Key="Monitor_ClaudeMdBloated">{0} is getting bloated: currently {1} lines/{2:F1}KB</sys:String>
+    <sys:String x:Key="Monitor_SessionNotFound">No session log found</sys:String>
+    <sys:String x:Key="Monitor_SessionOk">{0:F0}KB</sys:String>
+    <sys:String x:Key="Monitor_SessionBloated">The session is getting bloated ({0:F1}MB). Running /compact is recommended</sys:String>
+    <sys:String x:Key="Monitor_SessionBloatedSinceCompact">The session is getting bloated ({0:F1}MB since the last compact). Running /compact is recommended</sys:String>
+
+    <!-- RTK / ccusage display lines -->
+    <sys:String x:Key="Rtk_NotInstalled">Saved (RTK): not installed</sys:String>
+    <sys:String x:Key="Rtk_NoOutput">Saved (RTK): no output</sys:String>
+    <sys:String x:Key="Rtk_Raw">Saved (RTK): {0}</sys:String>
+    <sys:String x:Key="Rtk_Display">Saved (RTK): {0} tokens ({1:F1}%)</sys:String>
+    <sys:String x:Key="Rtk_DailyDisplay">Saved (RTK): today {0} / total {1}</sys:String>
+    <sys:String x:Key="Ccusage_NodeMissing">Used today: Node.js missing</sys:String>
+    <sys:String x:Key="Ccusage_RunFailed">Used today: command failed</sys:String>
+    <sys:String x:Key="Ccusage_ParseFailed">Used today: parse failed</sys:String>
+    <sys:String x:Key="Ccusage_Zero">Used today: 0 tokens</sys:String>
+    <sys:String x:Key="Ccusage_Display">Used today: {0:N0} tokens (${1:F2})</sys:String>
+
+    <!-- RTK install steps -->
+    <sys:String x:Key="RtkStep_FetchRelease">Find the prebuilt Windows binary on GitHub Releases</sys:String>
+    <sys:String x:Key="RtkStep_FetchRelease_Found">Found: {0} ({1})</sys:String>
+    <sys:String x:Key="RtkStep_FetchRelease_NoAsset">No Windows zip asset was found (the next step falls back to installing via cargo)</sys:String>
+    <sys:String x:Key="RtkStep_FetchRelease_Failed">Fetch failed: {0} (the next step falls back to installing via cargo)</sys:String>
+    <sys:String x:Key="RtkStep_Download">Download, extract, and place the binary</sys:String>
+    <sys:String x:Key="RtkStep_Download_Preview">(downloads and extracts the zip from the URL above)</sys:String>
+    <sys:String x:Key="RtkStep_Download_NoUrl">Skipped because no download URL was found (falling back to cargo)</sys:String>
+    <sys:String x:Key="RtkStep_Download_Placed">Placed at: {0}</sys:String>
+    <sys:String x:Key="RtkStep_Download_NoExe">rtk.exe was not found after extraction (falling back to cargo)</sys:String>
+    <sys:String x:Key="RtkStep_Download_Failed">Download/extraction failed: {0} (falling back to cargo)</sys:String>
+    <sys:String x:Key="RtkStep_Cargo">(Fallback) Build from source with Rust/cargo</sys:String>
+    <sys:String x:Key="RtkStep_Cargo_SkippedBinaryOk">Skipped because the binary install already succeeded</sys:String>
+    <sys:String x:Key="RtkStep_Cargo_Failed">cargo install failed: {0}</sys:String>
+    <sys:String x:Key="RtkStep_Cargo_Ok">Installed RTK via cargo install</sys:String>
+    <sys:String x:Key="RtkStep_Rustup_Ok">Installed rustup</sys:String>
+    <sys:String x:Key="RtkStep_Rustup_Failed">Failed to install rustup</sys:String>
+    <sys:String x:Key="RtkStep_Rustup_DownloadFailed">Failed to download rustup: {0}</sys:String>
+    <sys:String x:Key="RtkStep_VerifyVersion">Verify the install with rtk --version</sys:String>
+    <sys:String x:Key="RtkStep_VerifyVersion_Failed">Cannot run rtk --version (PATH may not be updated yet; you may need to restart this app)</sys:String>
+    <sys:String x:Key="RtkStep_VerifyGain">Verify this is the real RTK with rtk gain (guards against the impostor package)</sys:String>
+    <sys:String x:Key="RtkStep_VerifyGain_Ok">rtk gain ran successfully</sys:String>
+    <sys:String x:Key="RtkStep_VerifyGain_Failed">rtk gain failed. The unrelated crates.io package with the same name (Rust Type Kit) may have been installed by mistake</sys:String>
+    <sys:String x:Key="RtkStep_InitHook">Set up the Claude Code hook</sys:String>
+    <sys:String x:Key="RtkStep_InitHook_Ok">Hook configured. Once you have installed all the tools, restart Claude Code (including VS Code) one time at the end — a single restart applies every tool.</sys:String>
+    <sys:String x:Key="RtkStep_InitHook_Timeout">rtk init -g timed out. Open a command prompt, run "rtk init -g" manually, and answer y to the confirmation prompt (e.g. Patch existing ...settings.json? [y/N]). After it completes, restart this app to enable the RTK integration.</sys:String>
+    <sys:String x:Key="RtkStep_InitHook_Failed">rtk init -g failed: {0}</sys:String>
+
+    <!-- RTK uninstall steps -->
+    <sys:String x:Key="RtkStep_RemoveHook">Remove the RTK hook, RTK.md, and the Claude Code settings entry</sys:String>
+    <sys:String x:Key="RtkStep_RemoveHook_Ok">Hook removed</sys:String>
+    <sys:String x:Key="RtkStep_RemoveHook_Failed">rtk init -g --uninstall failed: {0}</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary">Delete the RTK binary</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_Preview">(either cargo uninstall rtk or deleting the binary, depending on how it was installed)</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_CargoOk">cargo uninstall rtk finished</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_CargoFailed">cargo uninstall failed: {0}</sys:String>
+    <sys:String x:Key="RtkStep_RemoveBinary_Ok">Binary deleted</sys:String>
+
+    <!-- claude-mem steps -->
+    <sys:String x:Key="CmStep_AddMarketplace">Add the claude-mem marketplace</sys:String>
+    <sys:String x:Key="CmStep_AddMarketplace_Failed">Failed to add the marketplace: {0}</sys:String>
+    <sys:String x:Key="CmStep_Install">Install the claude-mem plugin</sys:String>
+    <sys:String x:Key="CmStep_Install_Failed">Install failed: {0}</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings">Apply low-token settings (any existing file is backed up)</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings_Preview">Sets CONTEXT_OBSERVATIONS=1 / CONTEXT_FULL_COUNT=0 / CONTEXT_SESSION_COUNT=1 in {0}</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings_Ok">Low-token settings applied</sys:String>
+    <sys:String x:Key="CmStep_ApplySettings_Failed">Failed to apply the settings: {0}</sys:String>
+    <sys:String x:Key="CmStep_Uninstall">Uninstall the claude-mem plugin (your data in ~/.claude-mem is kept)</sys:String>
+    <sys:String x:Key="CmStep_Uninstall_Failed">Uninstall failed: {0}</sys:String>
+
+    <!-- Donation -->
+    <sys:String x:Key="Menu_SupportDev">☕ Support development</sys:String>
+    <sys:String x:Key="Donation_BannerMessage">You've saved {0} tokens so far 🎉 If this tool helps, consider supporting its development</sys:String>
+    <sys:String x:Key="Donation_Support">Support</sys:String>
+    <sys:String x:Key="Donation_Milestone_100K">100K</sys:String>
+    <sys:String x:Key="Donation_Milestone_1M">1M</sys:String>
+    <sys:String x:Key="Donation_Milestone_10M">10M</sys:String>
+    <sys:String x:Key="Donation_HelpLink">☕ Support development (opens the donation page)</sys:String>
+
+    <!-- Help window -->
+    <sys:String x:Key="Help_Title">Help</sys:String>
+    <sys:String x:Key="Help_WhatPrefix">What is this?:</sys:String>
+    <sys:String x:Key="Help_HowPrefix">What should I do?:</sys:String>
+    <sys:String x:Key="Help_BarColors_Title">Bar colors</sys:String>
+    <sys:String x:Key="Help_BarColors_What">A gauge of usage. Green = plenty of room, yellow = getting close, red = action needed</sys:String>
+    <sys:String x:Key="Help_BarColors_How">When a bar turns yellow or red, follow the fix described for that item below</sys:String>
+    <sys:String x:Key="Help_ClaudeMd_Title">Lines and size (CLAUDE.md)</sys:String>
+    <sys:String x:Key="Help_ClaudeMd_What">The size of the instruction file given to Claude Code. If it grows too large, it wastes tokens on every request</sys:String>
+    <sys:String x:Key="Help_ClaudeMd_How">When it turns yellow or red, right-click and choose "Copy CLAUDE.md diet instructions", then paste it into the Claude Code chat and run it (while green this item is grayed out; the copied text embeds the current line count and size). If you prefer to tidy the file yourself, use "Open CLAUDE.md folder" to open it in Explorer and edit it by hand</sys:String>
+    <sys:String x:Key="Help_SessionLog_Title">Session log</sys:String>
+    <sys:String x:Key="Help_SessionLog_What">The length of your conversation with Claude Code. If it grows too long, the AI's accuracy drops and token usage goes up</sys:String>
+    <sys:String x:Key="Help_SessionLog_How">When it turns red, right-click and choose "Copy /compact", then paste it into the Claude Code chat and run it. The conversation is compressed while keeping its key points. (Note: running /compact does not shrink the log file itself. This tool measures growth since the last /compact, so if the bar returns to green within about 5 seconds, everything is working)</sys:String>
+    <sys:String x:Key="Help_Totals_Title">The Saved (RTK) / Used today (ccusage) lines</sys:String>
+    <sys:String x:Key="Help_Totals_What">The Saved (RTK) line = tokens this tool has saved (today, plus the total since install). The Used today line = how much Claude you used today. The dollar amount on the Used today line is a reference value ccusage computes at pay-as-you-go API rates — on a flat-rate plan (Pro/Max etc.) it is not your actual bill</sys:String>
+    <sys:String x:Key="Help_Totals_How">Nothing to do — if the Saved (RTK) number keeps growing, the savings are working. If it says "Saved (RTK): not installed", right-click and choose "Manage tools" → "Install RTK". Claude Code must be restarted once after installing</sys:String>
+    <sys:String x:Key="Help_VersionPrefix">Version:</sys:String>
+</ResourceDictionary>

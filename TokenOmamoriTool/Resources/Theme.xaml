@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TokenOmamoriTool">
+    <!-- Omamori palette (spec §12.2). The color VALUES live in OmamoriTheme.cs (single source,
+         also read by tools/generate-icons.ps1 and by code-behind); this dictionary only exposes
+         them to XAML under the spec's resource keys. Never define a literal color here or in a
+         Window — add it to OmamoriTheme.cs instead. -->
+    <SolidColorBrush x:Key="OmamoriHealthy" Color="{x:Static local:OmamoriTheme.HealthyColor}" />
+    <SolidColorBrush x:Key="OmamoriWarning" Color="{x:Static local:OmamoriTheme.WarningColor}" />
+    <SolidColorBrush x:Key="OmamoriDanger" Color="{x:Static local:OmamoriTheme.DangerColor}" />
+    <SolidColorBrush x:Key="OmamoriAccent" Color="{x:Static local:OmamoriTheme.AccentColor}" />
+    <SolidColorBrush x:Key="WashiBackground" Color="{x:Static local:OmamoriTheme.WashiColor}" />
+</ResourceDictionary>
