@@ -2,6 +2,8 @@
 
 *日本語 | [English](#english)*
 
+**⬇️ ダウンロード: [最新版はこちら](https://github.com/lranslot/TokenOmamoriTool/releases/latest)**
+
 Claude Code の開発環境を見守り、トークン消費を抑えるための Windows 常駐型ツールです。
 CLAUDE.md やセッションログの肥大化を検知し、RTK・ccusage・claude-mem といった
 節約系ツールの導入/削除・利用状況の確認をワンストップで行えます。
@@ -198,6 +200,8 @@ dotnet test
 ---
 
 # English
+
+**⬇️ Download: [Latest release](https://github.com/lranslot/TokenOmamoriTool/releases/latest)**
 
 **Token Omamori Tool** ("omamori" = a Japanese protective charm) is a Windows tray-resident
 companion for Claude Code that helps you keep token consumption under control. It watches for
