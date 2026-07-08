@@ -150,6 +150,56 @@ CLAUDE.md やセッションログの肥大化を検知し、RTK・ccusage・cla
 自己完結型の単一ファイル EXE は、まれにセキュリティソフトに誤検知されることがあります。
 その場合は展開先フォルダを除外設定に追加するか、リポジトリから自前でビルドしてください。
 
+## セキュリティと透明性
+
+### 実行する外部コマンド
+
+本ツールは以下の外部コマンドを実行します。**状態表示用の4コマンドは一定間隔で自動実行されます**
+(既定60秒、設定の「外部コマンド間隔」で変更可)。それ以外はすべて右クリックメニューからの
+明示的な操作(ツール管理の導入/削除)でのみ実行されます。
+
+| コマンド | タイミング | 目的 |
+| --- | --- | --- |
+| `rtk gain` | 自動(60秒間隔・起動時・日付切替時) | 節約トークン数の表示 |
+| `node --version` | 自動(同上) | Node.js の有無確認 |
+| `cmd /c npx ccusage@latest daily --json` | 自動(同上) | 本日消費の表示 |
+| `cmd /c claude plugin list` | 自動(同上) | claude-mem 導入状態の確認 |
+| `rtk --version` / `rtk init -g --auto-patch` | RTKインストール操作時 | 動作確認・フック登録 |
+| `cargo --version` / `cargo install --git https://github.com/rtk-ai/rtk` / `rustup-init -y` | RTKインストール操作時(バイナリ入手失敗時のフォールバックのみ) | ソースからのビルド導入 |
+| `rtk init -g --uninstall` / `cargo uninstall rtk` | RTKアンインストール操作時 | フック解除・本体削除 |
+| `cmd /c claude plugin marketplace add thedotmack/claude-mem` / `cmd /c claude plugin install claude-mem` / `cmd /c claude plugin uninstall claude-mem` | claude-mem 導入/削除操作時 | プラグインの導入/削除 |
+
+このほか、フォルダを開く操作でエクスプローラーを、「☕ 開発を応援」でカンパページを既定ブラウザで
+開きます(いずれもユーザー操作起点)。
+
+### ファイルの読み書き先
+
+| 種別 | パス |
+| --- | --- |
+| 読み取り(監視) | 各監視プロジェクトの `CLAUDE.md`、最新セッションログ `%USERPROFILE%\.claude\projects\<エンコード名>\*.jsonl`(`CLAUDE_CONFIG_DIR` または設定で変更可) |
+| 書き込み(設定) | EXE と同じフォルダの `settings.json` |
+| 書き込み(内部状態) | `%LOCALAPPDATA%\TokenOmamoriTool\` 配下の `tool-install-state.json`・`rtk-daily-baseline.json` |
+| 書き込み(RTKインストール操作時のみ) | `%LOCALAPPDATA%\TokenOmamoriTool\tools\rtk\`(本体)、ユーザー環境変数 PATH への追記、`%TEMP%` への一時ダウンロード(完了後削除) |
+| 書き込み(claude-mem導入操作時のみ) | `%USERPROFILE%\.claude-mem\settings.json`(既存ファイルは `.bak.日時` にバックアップしてから低トークン設定を書き込み) |
+
+**ネットワーク通信**: 監視・表示機能は外部送信を一切行いません(テレメトリなし)。本体が HTTP
+通信をするのは RTK インストール操作時のみです(`api.github.com` からのリリース情報取得、GitHub
+Releases からのバイナリ取得、cargo フォールバック時の `win.rustup.rs`)。なお自動実行される
+`npx ccusage@latest` は npm レジストリへの問い合わせを伴うことがあります(npx 側の動作)。
+
+### 配布物の検証
+
+- **SHA256 の確認**(Releases 添付の `.sha256.txt` と比較):
+
+  ```powershell
+  Get-FileHash .\TokenOmamoriTool-vX.Y.Z-win-x64.zip -Algorithm SHA256
+  ```
+
+- **SmartScreen 警告**: コード署名がないため表示されます(上の
+  [初回実行時の SmartScreen 警告について](#初回実行時の-smartscreen-警告について)を参照)。判断材料
+  として、ソースは本リポジトリで全公開されており、ハッシュ検証と自前ビルドで同一物を確認できます。
+- **自前ビルド**: `tools/publish.ps1` を実行すると配布版と同じ構成の ZIP が `publish/` に生成されます。
+
 ## 動作環境
 
 - Windows 10 バージョン 1809 以降 / Windows 11
@@ -355,6 +405,58 @@ with `tools/publish.ps1`.
 
 Self-contained single-file EXEs are occasionally flagged by antivirus software by mistake.
 If that happens, add the extracted folder to your exclusion list, or build from source.
+
+## Security & transparency
+
+### External commands this tool runs
+
+The tool runs the following external commands. **The four status commands run automatically on a
+timer** (default 60 s, configurable via "External command interval" in Settings). Everything else
+runs only on an explicit user action from the context menu (tool management install/uninstall).
+
+| Command | When | Purpose |
+| --- | --- | --- |
+| `rtk gain` | Automatic (every 60 s, at startup, on date rollover) | Show token savings |
+| `node --version` | Automatic (same) | Detect Node.js |
+| `cmd /c npx ccusage@latest daily --json` | Automatic (same) | Show today's consumption |
+| `cmd /c claude plugin list` | Automatic (same) | Detect claude-mem install state |
+| `rtk --version` / `rtk init -g --auto-patch` | RTK install action | Verify / register hook |
+| `cargo --version` / `cargo install --git https://github.com/rtk-ai/rtk` / `rustup-init -y` | RTK install action (fallback only, when the binary download fails) | Build from source |
+| `rtk init -g --uninstall` / `cargo uninstall rtk` | RTK uninstall action | Remove hook / binary |
+| `cmd /c claude plugin marketplace add thedotmack/claude-mem` / `cmd /c claude plugin install claude-mem` / `cmd /c claude plugin uninstall claude-mem` | claude-mem install/uninstall action | Manage the plugin |
+
+The tool also opens Explorer (open-folder menu items) and your default browser ("☕ Support
+development") — both user-initiated.
+
+### Files read and written
+
+| Kind | Path |
+| --- | --- |
+| Read (monitoring) | Each monitored project's `CLAUDE.md`; the latest session log `%USERPROFILE%\.claude\projects\<encoded>\*.jsonl` (overridable via `CLAUDE_CONFIG_DIR` or settings) |
+| Write (settings) | `settings.json` next to the EXE |
+| Write (internal state) | `tool-install-state.json` and `rtk-daily-baseline.json` under `%LOCALAPPDATA%\TokenOmamoriTool\` |
+| Write (RTK install action only) | `%LOCALAPPDATA%\TokenOmamoriTool\tools\rtk\` (the binary), an entry appended to the user `PATH` variable, temporary downloads in `%TEMP%` (deleted afterwards) |
+| Write (claude-mem install action only) | `%USERPROFILE%\.claude-mem\settings.json` (an existing file is backed up to `.bak.<timestamp>` before the low-token settings are written) |
+
+**Network:** the monitoring/display features send nothing anywhere (no telemetry). The app itself
+makes HTTP requests only during the RTK install action (release info from `api.github.com`, the
+binary from GitHub Releases, and `win.rustup.rs` in the cargo fallback). Note that the
+automatically run `npx ccusage@latest` may contact the npm registry (npx's own behavior).
+
+### Verifying a release
+
+- **SHA256** (compare with the `.sha256.txt` attached to the release):
+
+  ```powershell
+  Get-FileHash .\TokenOmamoriTool-vX.Y.Z-win-x64.zip -Algorithm SHA256
+  ```
+
+- **SmartScreen warning**: appears because the app is not code-signed (see
+  [About the SmartScreen warning on first run](#about-the-smartscreen-warning-on-first-run)
+  above). As a basis for trust, the full source is public in this repository, and you can verify
+  the hash or reproduce the build yourself.
+- **Build it yourself**: run `tools/publish.ps1` to produce a ZIP in `publish/` with the same
+  layout as the release.
 
 ## Requirements
 
