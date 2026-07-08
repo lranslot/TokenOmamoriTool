@@ -197,6 +197,10 @@ dotnet test
 
 いただいた支援は開発・維持の励みになります。支援の有無で機能に差はありません。
 
+## ライセンス
+
+本ソフトウェアは MIT License で公開しています。詳細は [LICENSE](LICENSE) を参照してください。
+
 ---
 
 # English
@@ -390,3 +394,7 @@ If this tool saves you tokens (and money), consider supporting development:
 - **GitHub Sponsors**: <!-- TODO: https://github.com/sponsors/XXXX -->
 
 Support is entirely optional — all features are free for everyone.
+
+## License
+
+This software is released under the MIT License. See [LICENSE](LICENSE) for details.

@@ -7,7 +7,7 @@ public class ProjectPathEncoderTests
     [Fact]
     public void Encode_WindowsPath_MatchesObservedClaudeCodeEncoding()
     {
-        // Verified against this repo's own ~/.claude/projects/ folder name.
+        // Encoding rule verified against a real ~/.claude/projects/ folder name.
         var result = ProjectPathEncoder.Encode(@"c:\Users\foo\source\repos\SampleProject");
 
         Assert.Equal("c--Users-foo-source-repos-SampleProject", result);

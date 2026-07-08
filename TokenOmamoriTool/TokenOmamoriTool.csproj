@@ -14,6 +14,8 @@
     <!-- Generated from OmamoriShape/OmamoriTheme by tools/generate-icons.ps1 (spec §12.4) —
          rerun that script instead of editing the .ico files. -->
     <ApplicationIcon>Assets\omamori.ico</ApplicationIcon>
+    <!-- Keep local build paths out of the compiled binaries (leak prevention). -->
+    <PathMap>$(MSBuildProjectDirectory)=/src</PathMap>
   </PropertyGroup>
 
   <ItemGroup>
