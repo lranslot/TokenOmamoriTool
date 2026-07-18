@@ -10,7 +10,7 @@
     <UseWPF>true</UseWPF>
     <!-- Keep in sync with the git tag vX.Y.Z and the release ZIP name (spec §13.3);
          tools/publish.ps1 reads this value for the output names. -->
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <!-- Generated from OmamoriShape/OmamoriTheme by tools/generate-icons.ps1 (spec §12.4) —
          rerun that script instead of editing the .ico files. -->
     <ApplicationIcon>Assets\omamori.ico</ApplicationIcon>
