@@ -234,7 +234,7 @@ dotnet test
 このツールが役に立ったら、開発を応援していただけると嬉しいです。
 
 - **Ko-fi(単発の投げ銭)**: https://ko-fi.com/lranslot
-- **GitHub Sponsors**: <!-- TODO: https://github.com/sponsors/XXXX -->
+- **GitHub Sponsors(継続支援)**: https://github.com/sponsors/lranslot
 
 ### Ko-fi での支援方法(3ステップ)
 
@@ -493,7 +493,7 @@ Target framework: `net8.0-windows10.0.17763.0` (WPF, nullable enabled).
 If this tool saves you tokens (and money), consider supporting development:
 
 - **Ko-fi (one-time tip)**: https://ko-fi.com/lranslot
-- **GitHub Sponsors**: <!-- TODO: https://github.com/sponsors/XXXX -->
+- **GitHub Sponsors (recurring)**: https://github.com/sponsors/lranslot
 
 Support is entirely optional — all features are free for everyone.
 
