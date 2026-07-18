@@ -13,10 +13,13 @@ public static class CcusageRunner
         }
 
         // npx is a .cmd wrapper on Windows; CreateProcess won't resolve it without going through cmd.exe.
+        // 180s (not the usual 45s): right after a new ccusage version is published, npx has to
+        // download it first. A shorter timeout kills npx mid-download, the cache never completes,
+        // and every subsequent poll restarts the download — a permanent failure loop.
         var result = await ExternalCommandRunner.RunAsync(
             "cmd.exe",
             new[] { "/c", "npx", "ccusage@latest", "daily", "--json" },
-            TimeSpan.FromSeconds(45));
+            TimeSpan.FromSeconds(180));
 
         if (!result.Started || result.ExitCode != 0 || string.IsNullOrWhiteSpace(result.StandardOutput))
         {

@@ -101,6 +101,7 @@
     <sys:String x:Key="Ccusage_RunFailed">Used today: command failed</sys:String>
     <sys:String x:Key="Ccusage_ParseFailed">Used today: parse failed</sys:String>
     <sys:String x:Key="Ccusage_Zero">Used today: 0 tokens</sys:String>
+    <sys:String x:Key="External_LastKnownStale">{0} (update failed)</sys:String>
     <sys:String x:Key="Ccusage_Display">Used today: {0:N0} tokens (${1:F2})</sys:String>
 
     <!-- RTK install steps -->

@@ -25,6 +25,10 @@ namespace TokenOmamoriTool
         private readonly DispatcherTimer _externalToolsTimer;
         private DispatcherTimer? _midnightTimer;
         private bool _externalToolsRefreshing;
+        // A transient rtk/ccusage failure keeps showing the day's last good line (marked stale)
+        // instead of wiping it to a bare failure message.
+        private readonly LastGoodDisplayCache _rtkDisplayCache = new();
+        private readonly LastGoodDisplayCache _ccusageDisplayCache = new();
 
         private readonly WarningEdgeDetector _edgeDetector = new();
         private TaskbarIcon? _trayIcon;
@@ -155,12 +159,14 @@ namespace TokenOmamoriTool
             _externalToolsRefreshing = true;
             try
             {
+                var today = DateOnly.FromDateTime(DateTime.Now);
+
                 var rtk = await RtkGainRunner.RunAsync();
-                _externalTools.RtkDisplayText = BuildRtkDisplayText(rtk);
+                _externalTools.RtkDisplayText = _rtkDisplayCache.Resolve(rtk.ParsedOk, BuildRtkDisplayText(rtk), today);
                 _externalTools.RtkInstalled = rtk.Installed;
 
                 var ccusage = await CcusageRunner.RunAsync();
-                _externalTools.CcusageDisplayText = ccusage.DisplayText;
+                _externalTools.CcusageDisplayText = _ccusageDisplayCache.Resolve(ccusage.ParsedOk, ccusage.DisplayText, today);
 
                 _externalTools.ClaudeMemState = await ClaudeMemStatusChecker.CheckAsync();
 

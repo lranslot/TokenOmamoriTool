@@ -101,6 +101,7 @@
     <sys:String x:Key="Ccusage_RunFailed">本日消費：実行に失敗しました</sys:String>
     <sys:String x:Key="Ccusage_ParseFailed">本日消費：解析失敗</sys:String>
     <sys:String x:Key="Ccusage_Zero">本日消費：0 tokens</sys:String>
+    <sys:String x:Key="External_LastKnownStale">{0}（更新失敗）</sys:String>
     <sys:String x:Key="Ccusage_Display">本日消費：{0:N0} tokens (${1:F2})</sys:String>
 
     <!-- RTKインストール手順 -->
