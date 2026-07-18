@@ -8,21 +8,16 @@ Core features (monitoring, RTK/ccusage/claude-mem integration, install/uninstall
 residency, ja/en localization, donation flow, omamori visual theme) are implemented. All
 requirements live in `docs/`:
 
-- `docs/トークン節約ツール_仕様書_v0.2_1.md` — the spec (features, UI, scope).
-- `docs/仕様書v0.2_調査結果補足_1.md` — follow-up research answering the spec's open questions
-  (log paths, tool output formats, install methods). **Read both files together before implementing**
-  — the second file overrides/resolves "要調査" (needs investigation) items in the first.
-- `docs/トレイ常駐・カンパ導線_仕様追加_v0.3.md` — v0.3 additions: tray residency (§8) and
-  donation prompts (§9), both implemented.
-- `docs/多言語対応 仕様追加(v0.3追補).md` — §11 Japanese/English localization (implemented,
-  including the §11.7 bilingual README.md).
-- `docs/外見仕様追加(v0.3追補2).md` — §12 omamori visual theme: palette, tray/app icons, washi
-  main-window styling (implemented).
-- `docs/EXE化・配布仕様追加(v0.3追補3).md` — §13 portable EXE distribution: publish script,
-  versioning, GitHub Releases, README distribution notes (implemented).
+- `docs/仕様書_統合版_v1.0.md` — the spec (§1–§13, all implemented): features/UI/scope (§1–§5),
+  resolved research answers — log paths, tool output formats, install methods (§6), tray residency
+  (§8), donation prompts (§9–§10), §11 Japanese/English localization (including the §11.7 bilingual
+  README.md), §12 omamori visual theme (palette, tray/app icons, washi main-window styling),
+  §13 portable EXE distribution (publish script, versioning, GitHub Releases, README distribution
+  notes). Consolidates the former 6 spec files; § numbers are unchanged.
 
-**These files in `docs/` are the authoritative spec.** If code, comments, or this CLAUDE.md ever
-disagree with them, the `docs/` files win.
+**This file in `docs/` is the authoritative spec.** If code, comments, or this CLAUDE.md ever
+disagree with it, the spec wins. (`docs/実装メモ_アーキテクチャ詳細.md` holds implementation
+details and gotchas, referenced from the architecture notes below.)
 
 App display name: **「トークン節約お守りツール」**.
 
