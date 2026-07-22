@@ -11,6 +11,8 @@ CLAUDE.md やセッションログの肥大化を検知し、RTK・ccusage・cla
 詳細な仕様は [`docs/`](docs/) 以下を参照してください。コードと仕様書の内容が
 食い違う場合は `docs/` の内容が正となります。
 
+**関連記事**: [Claude Codeの節約ツールは本当に効くのか、監視ツールを自作してWindowsで実測した](https://zenn.dev/lranslot/articles/784bb2feb5576a)(Zenn)
+
 ## 方針
 
 - AI自身の応答品質を落として節約することはしない(I/O・メモリ層の最適化のみ)
@@ -264,6 +266,8 @@ for token-saving tools: RTK, ccusage, and claude-mem.
 
 Detailed specifications live under [`docs/`](docs/) (Japanese). If the code and the docs ever
 disagree, the docs win.
+
+**Related article** (Japanese): [Claude Codeの節約ツールは本当に効くのか、監視ツールを自作してWindowsで実測した](https://zenn.dev/lranslot/articles/784bb2feb5576a) — a hands-on measurement of these token-saving tools on Windows (on Zenn).
 
 ## Principles
 
